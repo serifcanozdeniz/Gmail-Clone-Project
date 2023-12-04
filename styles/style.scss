@@ -1,0 +1,132 @@
+@import "variables";
+@import "breakpoints";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f8fc;
+}
+header{
+    @extend .between; // between clasının özelliklerini aktardık.
+    padding: 20px;
+    gap: 20px;
+    font-size: 21px;
+.left{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    i{
+        font-size: 29px;
+    }
+    img{
+        width: 50px;
+    }
+}
+.middle{
+    form{
+        display: flex;
+        background-color: rgb(235, 234, 234);
+        padding: 6px 9px;
+        border-radius: 10px;
+
+        input{
+            border: none;
+            outline: none;
+            font-size: 18px;
+            background-color: transparent;
+        }
+    }
+
+    @include sm() {
+        display: none;
+    }
+}
+.right{
+    @extend .between;
+    gap: 15px;
+
+    i{
+        @extend .icon
+    }
+    img{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+}
+//ana içerik alanı
+section{
+    display: flex;
+    gap: 20px;
+}
+//sol navigasyon alanı
+nav{
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 40px;
+
+    .create{
+        background-color: $light-blue;
+        border-radius: 15px;
+        padding: 10px;
+        display: flex;
+        gap: 20px;
+        cursor: pointer;
+        transition: box-shadow .3s;
+        &:hover{
+            box-shadow: 2px 2px 10px gray;
+        }
+    }
+    ul{
+        // elemanları alt alta sıralyıp aralarına boşluk verne
+        //1) flex ile
+        // display: flex;
+        // flex-direction: column;
+        //2) grid kullanımı
+        display: grid;
+        gap: 16px;
+
+        li{
+            padding: 8px;
+            margin-left: 4px;
+            display: flex;
+            gap: 12px;
+            border-radius: 0 15px 15px 0;
+            cursor: pointer;
+            &:hover{
+                background-color: $light-blue;
+            }
+        }
+    }
+
+    .bottom{
+        margin-left: 8px;
+    }
+
+    
+}
+
+//js ile eklediğimiz hide class ı aktifse bütün yazıları kaldır
+.hide{
+    span{
+        display: none;
+    }
+}
+//orta > mail alanı
+main{
+    flex-grow: 1; //flex elemanın büyümesine izin verir.
+}
+// sağ > yan içerik
+aside{
+
+}
