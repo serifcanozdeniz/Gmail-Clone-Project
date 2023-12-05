@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
-.between, header .right, header {
+.between, main .top, header .right, header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.icon, header .right i {
+.icon, aside img, main .top i, header .right i {
   width: 35px;
   height: 35px;
   display: grid;
@@ -15,7 +15,7 @@
   cursor: pointer;
   transition: background 0.3s;
 }
-.icon:hover, header .right i:hover {
+.icon:hover, aside img:hover, main .top i:hover, header .right i:hover {
   background: #d8dbdd;
 }
 
@@ -87,6 +87,12 @@ nav {
   padding: 12px;
   gap: 40px;
 }
+@media (max-width: 768px) {
+  nav {
+    padding: 0px;
+    padding-left: 6px;
+  }
+}
 nav .create {
   background-color: #d0ebff;
   border-radius: 15px;
@@ -124,4 +130,109 @@ nav .bottom {
 
 main {
   flex-grow: 1;
+}
+@media (max-width: 768px) {
+  main {
+    margin-right: 20px;
+  }
+}
+main .top {
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 8px 16px;
+}
+main .top .left, main .top .right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .mails {
+  background-color: #e9ecef;
+  height: 80vh;
+}
+
+.mail {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  font-size: 16px;
+  padding: 10px;
+  border-bottom: 1px solid white;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  cursor: pointer;
+}
+.mail:hover {
+  box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
+}
+.mail .info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.mail .content {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.mail .content .title {
+  font-weight: bold;
+}
+.mail .content .desc {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.mail .time {
+  text-align: end;
+  white-space: nowrap;
+}
+.mail button {
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 4px;
+  border-radius: 5px;
+}
+.mail button:hover {
+  background-color: rgb(201, 200, 200);
+}
+.mail:hover > button {
+  display: block;
+}
+.mail:hover > .time {
+  display: none;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  aside {
+    padding: 12px;
+  }
+}
+aside span {
+  background-color: #495057;
+  height: 2px;
+  width: 100%;
+}
+aside img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  aside {
+    display: none;
+  }
 }/*# sourceMappingURL=style.css.map */

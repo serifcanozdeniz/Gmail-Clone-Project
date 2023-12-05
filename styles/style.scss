@@ -75,6 +75,11 @@ nav{
     padding: 12px;
     gap: 40px;
 
+    @include sm{
+        padding: 0px;
+        padding-left: 6px;
+    }
+
     .create{
         background-color: $light-blue;
         border-radius: 15px;
@@ -125,8 +130,121 @@ nav{
 //orta > mail alanı
 main{
     flex-grow: 1; //flex elemanın büyümesine izin verir.
+
+    @include sm {
+        margin-right: 20px;
+    }
+
+    .top{
+        @extend .between;
+        background-color: white;
+        border-radius: 10px 10px 0 0;
+        padding: 8px 16px;
+
+        i{
+            @extend .icon;
+        }
+
+        .left, .right{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
+    .mails{
+        background-color: $gray;
+        height: 80vh;
+    }
+}
+// bir mail
+.mail{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    font-size: 16px;
+    padding: 10px;
+    border-bottom: 1px solid white;
+    column-gap: 5px;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
+    }
+
+    .info{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .content{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap;
+        overflow: hidden; // taşan yazıları gizler
+
+        .title{
+            font-weight: bold;
+        }
+        .desc{
+            overflow: hidden; // taşan yazıları gizler
+            white-space: nowrap; // tek satırda olmasını sağlar
+            text-overflow: ellipsis; // eğer ki taşan yazı var ise ... koyar
+
+        }
+    }
+    .time{
+        text-align: end;
+        white-space: nowrap;
+    }
+    // sil butonunu mail hoverlanınca göster
+    button{
+        display: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all .3s;
+        padding: 4px;
+        border-radius: 5px;
+        &:hover{
+            background-color: rgb(201, 200, 200);
+        }
+        
+    }
+    &:hover > button{
+        display: block;
+    }
+    &:hover > .time{
+        display: none;
+    }
 }
 // sağ > yan içerik
 aside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 20px;
 
+    @include sm{
+        padding: 12px;
+    }
+
+    span{
+        background-color: $dark-gray;
+        height: 2px;
+        width: 100%;
+    }
+
+    img{
+        @extend .icon;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+    }
+
+    @include sm{
+        display: none;
+    }
 }
