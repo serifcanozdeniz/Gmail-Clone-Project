@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import "variables";
 @import "breakpoints";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import "modal";
+
 
 *{
     margin: 0;
@@ -102,13 +104,24 @@ nav{
         gap: 16px;
 
         li{
-            padding: 8px;
-            margin-left: 4px;
+            cursor: pointer;
+
+            label{
             display: flex;
             gap: 12px;
+            padding: 8px;
+            margin-left: 4px;
             border-radius: 0 15px 15px 0;
             cursor: pointer;
             &:hover{
+                background-color: $light-blue;
+            }
+            }
+            input{
+                display: none;
+            }
+            // eğer ki içinde inputu tikli olan li elemanı varsa stilleri uygula.
+            &:has(input:checked) label {
                 background-color: $light-blue;
             }
         }
@@ -166,16 +179,18 @@ main{
     border-bottom: 1px solid white;
     column-gap: 5px;
     cursor: pointer;
+
+    #star{
+        color: gold;
+    }
     &:hover{
         box-shadow: 0 0 30px rgba(128, 128, 128, 0.4);
     }
-
     .info{
         display: flex;
         align-items: center;
         gap: 10px;
     }
-
     .content{
         display: flex;
         align-items: center;
@@ -198,21 +213,24 @@ main{
         white-space: nowrap;
     }
     // sil butonunu mail hoverlanınca göster
-    button{
+    #button-wrapper{
         display: none;
+    }
+    button{
         border: none;
         background-color: transparent;
         cursor: pointer;
         transition: all .3s;
-        padding: 4px;
+        padding: 4px 10px;
         border-radius: 5px;
         &:hover{
             background-color: rgb(201, 200, 200);
         }
         
     }
-    &:hover > button{
-        display: block;
+    &:hover > #button-wrapper{
+        display: flex;
+        justify-content: end;
     }
     &:hover > .time{
         display: none;

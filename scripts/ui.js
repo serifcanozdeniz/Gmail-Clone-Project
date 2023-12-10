@@ -4,9 +4,13 @@ export const ele = {
     menu: document.querySelector("#menu"),
     nav: document.querySelector("nav"),
     mailsArea: document.querySelector(".mails"),
+    modal: document.querySelector(".modal-wrapper"),
+    createBtn: document.querySelector(".create"),
+    closeBtn: document.querySelector(".close-modal"),
+    modalForm: document.querySelector(".modal"),
 };
 
-//! ekrana mailleri basa
+//! ekrana mailleri basar
 // mailData: ekrana basılacak mailler
 export const renderMails = (mailData) => {
     // mailData dizisindeki her bir mail için bir mail
@@ -14,10 +18,10 @@ export const renderMails = (mailData) => {
  const mail_html = mailData.map((mail) => {
     
     return `
-        <div class="mail">
+        <div class="mail" data-id="${mail.id}">
                     <div class="info">
                         <input type="checkbox">
-                        <i class="bi bi-star-fill"></i>
+                        <i id="star" class="bi ${mail.isStared ? 'bi-star-fill' : 'bi-star'}"></i>
                         <b>${mail.sender}</b>
                     </div>
                     <div class="content">
@@ -25,7 +29,10 @@ export const renderMails = (mailData) => {
                         <p class="desc">${mail.message}</p>
                     </div>
                     <p class="time">${mail.date}</p>
-                    <button>Sil</button>
+                    
+                    <div id="button-wrapper">
+                    <button id="delete">Sil</button>
+                    </div>
         </div>
         
         `;
@@ -37,3 +44,10 @@ export const renderMails = (mailData) => {
     // html deki mail alanına oluşturduğumuz stringi gönder
     ele.mailsArea.innerHTML = mail_html.join(' ');
 };
+
+// ! modal'ı göster gizle
+// aldığı parametre true ise modal'ı gösterir false ise gizler
+export const toggleModal = (willOpen) => {
+    // will open değeri true ise display grid, değilse none yapacağız
+    ele.modal.style.display = willOpen === true ? 'grid' : 'none';
+}

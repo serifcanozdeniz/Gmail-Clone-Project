@@ -1,109 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gmail</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="shortcut icon" href="/images/gmail-logo.webp">
-    <link rel="stylesheet" href="/styles/style.css">
-</head>
-<body>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+    <link rel="shortcut icon" href="/images/gmail-logo.webp" />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
     <!-- header -->
 
     <header>
-        <!-- sol kısım -->
-        <div class="left">
-            <div id="menu" class="icon">
-                <i class="bi bi-list"></i>
-            </div>
-            <img src="/images/gmail-logo.webp" alt="">
-            <span>Gmail</span>
+      <!-- sol kısım -->
+      <div class="left">
+        <div id="menu" class="icon">
+          <i class="bi bi-list"></i>
         </div>
-        <!-- orta kısım -->
-        <div class="middle">
-            <form>
-                <button class="icon">
-                    <i class="bi bi-search"></i>
-                </button>
-                <input type="search" placeholder="Postalarda arayın">
-            </form>
-        </div>
-        <!-- sağ kısım -->
-        <div class="right">
-            <i class="bi bi-question-circle"></i>
-            <i class="bi bi-gear-fill"></i>
-            <i class="bi bi-menu-button-wide-fill"></i>
-            <img src="/images/serif.jpg" alt="">
-        </div>
+        <img src="/images/gmail-logo.webp" alt="" />
+        <span>Gmail</span>
+      </div>
+      <!-- orta kısım -->
+      <div class="middle">
+        <form>
+          <button class="icon">
+            <i class="bi bi-search"></i>
+          </button>
+          <input type="search" placeholder="Postalarda arayın" />
+        </form>
+      </div>
+      <!-- sağ kısım -->
+      <div class="right">
+        <i class="bi bi-question-circle"></i>
+        <i class="bi bi-gear-fill"></i>
+        <i class="bi bi-menu-button-wide-fill"></i>
+        <img src="/images/serif.jpg" alt="" />
+      </div>
     </header>
 
     <!-- ana içerik -->
 
     <section>
-        <!-- sol > navigasyon -->
-        <nav>
-            <!-- nav > oluştur alanı -->
-            <div class="create">
-                <i class="bi bi-pencil-fill"></i>
-                <span>Oluştur</span>
-            </div>
+      <!-- sol > navigasyon -->
+      <nav>
+        <!-- nav > oluştur alanı -->
+        <div class="create">
+          <i class="bi bi-pencil-fill"></i>
+          <span>Oluştur</span>
+        </div>
 
-            <!-- nav > yönlendirme alanı -->
-            <ul>
-                <li>
-                    <i class="bi bi-image"></i>
-                    <span>Gelen Kutusu</span>
-                </li>
-                <li>
-                    <i class="bi bi-star"></i>
-                    <span>Yıldızlı</span>
-                </li>
-                <li>
-                    <i class="bi bi-clock"></i>
-                    <span>Zamanlı</span>
-                </li>
-                <li>
-                    <i class="bi bi-arrow-right-circle"></i>
-                    <span>Gönderilenler</span>
-                </li>
-                <li>
-                    <i class="bi bi-archive"></i>
-                    <span>Taslaklar</span>
-                </li>
-                <li>
-                    <i class="bi bi-arrow-down"></i>
-                    <span>Daha Fazla</span>
-                </li>
-            </ul>
+        <!-- nav > yönlendirme alanı -->
+        <ul>
+          <li>
+            <input checked id="category1" type="radio" name="category">
+            <label for="category1">
+            <i class="bi bi-image"></i>
+            <span>Gelen Kutusu</span>
+          </label>
+          </li>
+          <li>
+            <input id="category2" type="radio" name="category">
+            <label for="category2">
+            <i class="bi bi-star"></i>
+            <span>Yıldızlı</span>
+          </label>
+          </li>
+          <li>
+            <input id="category3" type="radio" name="category">
+            <label for="category3">
+            <i class="bi bi-clock"></i>
+            <span>Zamanlı</span>
+          </label>
+          </li>
+          <li>
+            <input id="category4" type="radio" name="category">
+            <label for="category4">
+            <i class="bi bi-arrow-right-circle"></i>
+            <span>Gönderilenler</span>
+          </label>
+          </li>
+          <li>
+            <input id="category5" type="radio" name="category">
+            <label for="category5">
+            <i class="bi bi-archive"></i>
+            <span>Taslaklar</span>
+          </label>
+          </li>
+          <li>
+            <input id="category6" type="radio" name="category">
+            <label for="category6">
+            <i class="bi bi-arrow-down"></i>
+            <span>Daha Fazla</span>
+          </label>
+          </li>
+        </ul>
 
-            <!-- nav > kategoriler alanı -->
-            <div class="bottom">
-                <span>Kategoriler</span>
-                <i class="bi bi-plus-lg"></i>
-            </div>
-        </nav>
-        
-        <!-- orta > mail alanı -->
-        <main>
-            <!-- üst bar -->
-            <div class="top">
-                <div class="left">
-                    <input type="checkbox">
-                    <i class="bi bi-arrow-clockwise"></i>
-                    <i class="bi bi-three-dots-vertical"></i>
-                </div>
-                <div class="right">
-                    <p>1-50 of 94</p>
-                    <i class="bi bi-chevron-left"></i>
-                    <i class="bi bi-chevron-right"></i>
-                </div>
-            </div>
-            <!-- mailler -->
-            <div class="mails">
-                <!-- bir mail -->
-                <!-- <div class="mail">
+        <!-- nav > kategoriler alanı -->
+        <div class="bottom">
+          <span>Kategoriler</span>
+          <i class="bi bi-plus-lg"></i>
+        </div>
+      </nav>
+
+      <!-- orta > mail alanı -->
+      <main>
+        <!-- üst bar -->
+        <div class="top">
+          <div class="left">
+            <input type="checkbox" />
+            <i class="bi bi-arrow-clockwise"></i>
+            <i class="bi bi-three-dots-vertical"></i>
+          </div>
+          <div class="right">
+            <p>1-50 of 94</p>
+            <i class="bi bi-chevron-left"></i>
+            <i class="bi bi-chevron-right"></i>
+          </div>
+        </div>
+        <!-- mailler -->
+        <div class="mails">
+          <!-- bir mail -->
+          <!-- <div class="mail">
                     <div class="info">
                         <input type="checkbox">
                         <i class="bi bi-star-fill"></i>
@@ -116,31 +136,37 @@
                     <p class="time">3 Aralık</p>
                     <button>Sil</button>
                 </div> -->
-                <!-- bir mail -->
-            </div>
-        </main>
+          <!-- bir mail -->
+        </div>
+      </main>
 
-        <!-- sağ > yan alan -->
-        <aside>
-            <img src="/images/calendar-48.png" alt="">
-            <img src="/images/keep-48.png" alt="">
-            <img src="/images/task-48.png" alt="">
-            <img src="/images/account-48.png" alt="">
-            <span></span>
-            <i class="bi bi-plus-lg icon"></i>
-        </aside>
+      <!-- sağ > yan alan -->
+      <aside>
+        <img src="/images/calendar-48.png" alt="" />
+        <img src="/images/keep-48.png" alt="" />
+        <img src="/images/task-48.png" alt="" />
+        <img src="/images/account-48.png" alt="" />
+        <span></span>
+        <i class="bi bi-plus-lg icon"></i>
+      </aside>
     </section>
 
+    <!-- ekleme modal'ı -->
 
-    
-
-
-
-
-
-
+    <div class="modal-wrapper">
+        <form class="modal">
+          <div class="header">
+            <h5>Yeni İleti</h5>
+            <button type="button" class="close-modal"><span>X</span></button>
+          </div>
+          <input placeholder="Kime" type="text" />
+          <input placeholder="Konu" type="text" />
+          <textarea></textarea>
+          <button type="submit" id="send">Gönder</button>
+        </form>
+      </div>
 
     <!-- javascript -->
     <script src="main.js" type="module"></script>
-</body>
+  </body>
 </html>
