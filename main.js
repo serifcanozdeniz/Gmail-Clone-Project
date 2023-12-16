@@ -130,3 +130,40 @@ ele.nav.addEventListener('click', (e) => {
         renderMails(mailData);
     }
 });
+
+// 7) aratma özelliği
+// kullanıcının anlık olarak inputa her veri girdiğinde mailleri filtrele
+
+// sayaç değişkeni
+let timer;
+
+ele.searchInp.addEventListener('input', (e) => {
+    
+    // yeni tuş vuruşunda nceki her sayımı sıfırla
+    clearTimeout(timer);
+    // fonksiyonu çalıştırmak için her sayım başlat
+    timer = setTimeout (() => searchMail(e),1000);
+});
+
+function searchMail(e) {
+    // arama terimine erişme
+    const query = e.target.value;
+    
+    //mail'in içerisindeki en 1 değer arattığımız terimi içeriyorsa maili filtrele
+    const filtred = mailData.filter((mail)=>
+        // objeyi diziye çevir
+        Object.values(mail) 
+        // dizinin ihtiyacımız olan elemanlarını al
+        .slice(1, 6)
+        // objenin değerlerinden en az biri arattığımız terimi içeriyor mu kontrolü yaptık
+        .some((value) => value.toLowerCase().includes(query.toLowerCase()))
+    );
+
+    if(filtred.length === 0) {
+        // idizide eleman yoksa uyarı bas
+        ele.mailsArea.innerHTML = '<div class="warn">Arattığınız terime uygun mail bulunamadı</div>'
+    } else{
+        // filtrelenenleri ekrana bas
+        renderMails(filtred);
+    }
+}
